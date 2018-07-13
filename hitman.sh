@@ -5,7 +5,7 @@
 # I decided to whip up this script and run it in the background
 
 # Set the variable "applic" to the name of your application as indicated in ps or top:
-declare applic='TeamViewer.app'
+declare applic='YourApplication.app'
 
 declare valu;
 while [ 0 -lt 1 ]
