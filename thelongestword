@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# This script takes input from standard in
+# sets one word per line, then identifies the first longest word and prints it out to standard out
+
+declare large=0;
+cat /dev/stdin|while read LINE; do
+  echo $LINE|tr " " "\n" >>testfile.txt
+done
+for i in $(cat testfile.txt); do
+  length=${#i};
+  if [ $length -gt $large ]; then
+    large=$length;
+    largeword=$i;
+  fi
+done
+echo $largeword;
