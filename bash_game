@@ -1,0 +1,17 @@
+#!/bin/bash
+random=`shuf -i 1-100 -n 1`
+#echo $random
+input=0
+count=0
+echo -e "\n I am thinking of a number between 1 and 100. Please guess the number."
+while [ $input != $random ]; do
+    read input
+    let count=$count+1
+    if [ $input -gt $random ]; then
+        echo -e "Sorry, you guessed too high! Please guess again\n\n"
+    elif [ $input -lt $random ]; then
+        echo -e "Sorry, you guessed too low! Please guess again\n\n"
+    else
+        echo -e "Yeppers! I was thinking of $random, and you guessed it in only $count tries! You must be very psychic!\n\n"
+    fi
+done
