@@ -1,0 +1,21 @@
+read -p 'Please enter the number of sequences you would like in your Fibonacci? ' NumSeq;                                                     
+if [ "$NumSeq" = '' ]; then                                                                                                                   
+  echo 'Fibonacci requires at least 2 sequences to run' >&2                                                                                   
+  exit 1;                                                                                                                                     
+elif [ $NumSeq -lt 2 ]; then                                                                                                                  
+  echo 'Fibonacci requires at least 2 sequences to run' >&2                                                                                   
+  exit 1;                                                                                                                   5,20           All
+fiibonacci" 21L, 505C
+
+declare pn=(0 1);
+for ((i=2;$i<$NumSeq;i++)); do
+  a=$[ ${#pn[@]} - 1 ];
+  b=$[ ${#pn[@]} - 2 ];
+  c=$[ ${pn[$a]} + ${pn[$b]} ];
+  pn+=($c);
+done
+
+num=${#pn[*]};
+for ((z=0;$z<$num;z++)); do
+  echo "${pn[$z]}"
+done
